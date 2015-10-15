@@ -74,7 +74,7 @@ Class Automattic_Readme {
 		}
 
 		// Donate Link: URL
-		if ( preg_match('|Donate link:(.*)|i', $file_contents, $_donate_link) )
+		if ( preg_match('|Donate link:\s+(.*)|i', $file_contents, $_donate_link) )
 			$donate_link = clean_url( $_donate_link[1] );
 		else
 			$donate_link = NULL;
@@ -86,7 +86,7 @@ Class Automattic_Readme {
 			$license = NULL;
 
 		// License URI: URL
-		if ( preg_match( '|License URI:(.*)|i', $file_contents, $_license_uri ) )
+		if ( preg_match( '|License URI:\s+(.*)|i', $file_contents, $_license_uri ) )
 			$license_uri = clean_url( $_license_uri[1] );
 		else
 			$license_uri = null;
